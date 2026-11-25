@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مجله‌ای کوچک برای سفر، زندگی و ایده‌های تازه">
+  <title>راهِ دور | وبلاگ شخصی</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+    :root{--ink:#202820;--muted:#72796f;--paper:#f7f6f0;--green:#526b4d;--light:#e8ecdf;--line:#e5e5dc;--orange:#d58b55}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.9}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,90%);margin:auto}
+    header{height:82px;display:flex;align-items:center;border-bottom:1px solid var(--line);background:#f7f6f0eF;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{font-size:1.35rem;font-weight:800;letter-spacing:-1px}.logo span{color:var(--orange)}
+    nav{display:flex;gap:28px;color:#596257;font-size:.92rem}
+    nav a:hover{color:var(--orange)}
+    .subscribe{border:1px solid var(--green);padding:8px 17px;border-radius:30px;font-size:.85rem;color:var(--green);transition:.2s}
+    .subscribe:hover{background:var(--green);color:white}
+    .hero{padding:78px 0 64px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:54px}
+    .eyebrow{color:var(--orange);font-size:.85rem;font-weight:700;letter-spacing:.3px}
+    h1{font-size:clamp(2.4rem,5vw,4.3rem);line-height:1.35;margin:14px 0 18px;letter-spacing:-2px}
+    h1 em{font-style:normal;color:var(--green)}
+    .hero p{color:var(--muted);max-width:500px;margin:0 0 28px}
+    .button{display:inline-block;background:var(--green);color:#fff;padding:12px 23px;border-radius:7px;font-size:.92rem;box-shadow:0 8px 20px #526b4d24;transition:.2s}
+    .button:hover{transform:translateY(-2px);background:#40573c}
+    .hero-art{height:390px;position:relative;border-radius:48% 48% 12px 12px;overflow:hidden;background:linear-gradient(145deg,#d9dfca,#9aaa86)}
+    .hero-art:before{content:"";position:absolute;width:310px;height:310px;border-radius:50%;background:#e8d3a7;top:35px;left:70px}
+    .mountain{position:absolute;bottom:-2px;width:0;height:0;border-left:220px solid transparent;border-right:220px solid transparent;border-bottom:230px solid #61775a}
+    .m1{right:-30px}.m2{left:-80px;border-bottom-color:#87977a;border-left-width:190px;border-right-width:190px;border-bottom-width:175px}
+    .sun{position:absolute;width:80px;height:80px;background:#f4eee0;border-radius:50%;top:85px;right:95px}
+    .road{position:absolute;bottom:-30px;left:42%;width:100px;height:180px;background:#d5b991;transform:perspective(120px) rotateX(22deg);border-radius:50% 50% 0 0}
+    .art-label{position:absolute;bottom:25px;right:25px;color:white;font-size:.85rem;text-shadow:0 1px 8px #263321}
+    .section-head{display:flex;justify-content:space-between;align-items:end;margin:10px 0 25px}
+    h2{font-size:1.65rem;margin:0}.section-head p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+    .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:78px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.25s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #28332212}
+    .thumb{height:190px;display:flex;align-items:center;justify-content:center;font-size:4rem}
+    .thumb.one{background:linear-gradient(135deg,#e7d4b5,#b4a17f)}.thumb.two{background:linear-gradient(135deg,#dce5d4,#839b7b)}.thumb.three{background:linear-gradient(135deg,#e7d6c8,#bd8d72)}
+    .card-body{padding:20px}
+    .tag{font-size:.75rem;color:var(--green);background:var(--light);padding:4px 10px;border-radius:20px}
+    .card h3{font-size:1.12rem;margin:13px 0 7px}
+    .card p{font-size:.88rem;color:var(--muted);margin:0 0 16px}
+    .meta{font-size:.77rem;color:#92988f;display:flex;justify-content:space-between}
+    .about{background:var(--light);padding:42px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;gap:30px;margin-bottom:75px}
+    .about h2{margin-bottom:8px}.about p{margin:0;color:#626e5d;max-width:650px}
+    .about-mark{font-size:3rem;flex-shrink:0}
+    footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-size:.82rem}
+    .foot{display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:760px){nav{gap:13px;font-size:.82rem}.hero{grid-template-columns:1fr;padding-top:48px;gap:30px}.hero-art{height:300px}.posts{grid-template-columns:1fr 1fr}.about{padding:28px}}
+    @media(max-width:520px){header{height:auto;padding:15px 0}.nav{flex-wrap:wrap}.nav nav{order:3;width:100%;justify-content:space-between}.subscribe{margin-right:auto}.posts{grid-template-columns:1fr}.hero{padding-bottom:45px}.hero-art{height:250px}.about{align-items:flex-start}.foot{flex-direction:column;gap:5px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#">راهِ دور<span>.</span></a>
+      <nav aria-label="منوی اصلی">
+        <a href="#home">خانه</a><a href="#posts">نوشته‌ها</a><a href="#about">درباره وبلاگ</a>
+      </nav>
+      <a class="subscribe" href="mailto:hello@example.com">ارتباط با من</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="home">
+      <div>
+        <span class="eyebrow">یادداشت‌هایی از مسیر زندگی</span>
+        <h1>گاهی باید <em>راه افتاد</em>، حتی بی‌آنکه مقصد را بدانی.</h1>
+        <p>اینجا از سفرهای کوچک، تجربه‌های تازه، کتاب‌هایی که ورق می‌زنیم و فکرهایی که در شلوغی روزمره گم می‌شوند می‌نویسم. خوش آمدی به گوشه‌ی دنج من.</p>
+        <a class="button" href="#posts">خواندن نوشته‌ها ←</a>
+      </div>
+      <div class="hero-art" role="img" aria-label="تصویرسازی ساده کوهستان و مسیر">
+        <div class="sun"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="road"></div>
+        <span class="art-label">هر مسیر، یک داستان تازه</span>
+      </div>
+    </section>
+
+    <section id="posts">
+      <div class="section-head">
+        <div><h2>تازه‌ترین نوشته‌ها</h2><p>چند تکه از فکرها و تجربه‌های من</p></div>
+        <span class="eyebrow">مجله‌ی کوچک من</span>
+      </div>
+      <div class="posts">
+        <article class="card">
+          <div class="thumb one" aria-hidden="true">🏕️</div>
+          <div class="card-body">
+            <span class="tag">سفر و طبیعت</span>
+            <h3>لذت گم شدن در یک جاده‌ی فرعی</h3>
+            <p>گاهی بهترین بخش سفر، همان پیچ اشتباهی است که ما را به منظره‌ای تازه می‌رساند.</p>
+            <div class="meta"><span>۲۵ آبان ۱۴۰۵</span><span>۴ دقیقه مطالعه</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb two" aria-hidden="true">📚</div>
+          <div class="card-body">
+            <span class="tag">کتاب و یادگیری</span>
+            <h3>هر روز کمی بهتر از دیروز</h3>
+            <p>قرار نیست یک‌شبه همه‌چیز عوض شود؛ قدم‌های کوچک هم اگر ادامه پیدا کنند، معجزه می‌کنند.</p>
+            <div class="meta"><span>۱۸ آبان ۱۴۰۵</span><span>۳ دقیقه مطالعه</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb three" aria-hidden="true">☕</div>
+          <div class="card-body">
+            <span class="tag">زندگی روزمره</span>
+            <h3>یک فنجان چای و چند دقیقه سکوت</h3>
+            <p>در دنیایی که همه عجله دارند، گاهی مکث کردن خودش یک جور شجاعت است.</p>
+            <div class="meta"><span>۱۰ آبان ۱۴۰۵</span><span>۲ دقیقه مطالعه</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div><h2>درباره‌ی «راه دور»</h2><p>این وبلاگ یک دفترچه‌ی آنلاین برای ثبت تجربه‌ها، ایده‌ها و چیزهایی است که ارزش به خاطر سپردن دارند. قرار نیست همیشه حرف بزرگی داشته باشیم؛ گاهی یک مشاهده‌ی ساده کافی است.</p></div>
+      <div class="about-mark" aria-hidden="true">✦</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot"><span>© ۱۴۰۵ — تمام نوشته‌ها برای «راهِ دور» محفوظ است.</span><span>ساخته‌شده با علاقه و کمی چای ☕</span></div>
+  </footer>
+</body>
+</html>
